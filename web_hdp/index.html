@@ -1,0 +1,57 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+          <img src="images/logo_hdp.png" alt="HDP">
+      </div>
+      <nav>
+        <ul>
+          <button id="btn-noticias">Noticias</button>
+          <button id="btn-videojuegos">Videojuegos</button>
+          <button id="btn-cine-series">Cine y series</button>
+        </ul>
+      </nav>
+    </header>
+    
+    <section>
+      <section id="noticias">
+                          [{'titulo': 'NOTICIA 1', 'contenido': 'Contenido de la reseña 1...'}, {'titulo': 'NOTICIA 2', 'contenido': 'Contenido de la reseña 2...'}]
+                        </section>
+    
+    <footer>
+      <p>© 2023 Hablemos de Pavadas. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+  document.getElementById("btn-noticias").addEventListener("click", function() {
+    fetch('/cambiar-seccion?opcion=noticias')
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // Imprime la respuesta del servidor en la consola (opcional)
+      });
+  });
+
+  document.getElementById("btn-videojuegos").addEventListener("click", function() {
+    fetch('/cambiar-seccion?opcion=videojuegos')
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // Imprime la respuesta del servidor en la consola (opcional)
+      });
+  });
+
+  document.getElementById("btn-cine-series").addEventListener("click", function() {
+    fetch('/cambiar-seccion?opcion=cine-series')
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // Imprime la respuesta del servidor en la consola (opcional)
+      });
+  });
+</script>
+  </body>
+  </html>
+  
